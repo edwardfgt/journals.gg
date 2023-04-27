@@ -6,6 +6,7 @@ import Newsletters from './components/newsletters/newsletters';
 import Navbar from './components/navbar/navbar';
 import './App.css';
 import Footer from './components/footer/footer';
+import Template from './components/template/template';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/newsletters" element={<Newsletters />} />
+        <Route path="/template" element={<Template />} />
+
       </Routes>
       <Footer/>
     </Router>
