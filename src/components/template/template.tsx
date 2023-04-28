@@ -160,7 +160,7 @@ import {
     ],
   }
   
-  export default function Templaet() {
+  export default function Template() {
     return (
       <div className="bg-gray-900">
         <main>

@@ -7,7 +7,7 @@ const Home:FC = () => {
 
     return (
     <>
-    <div className="mt-90 mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-40 lg:flex lg:px-8 lg:pt-40">
+    <div className="mt-90 mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-30 lg:flex lg:px-8 lg:pt-40">
       <div className="grid grid-cols-2 gap-4">
         <div>
         <h1 className="mt-100 mb-4 text-6xl">Journals.GG</h1>
@@ -21,8 +21,9 @@ const Home:FC = () => {
         </div>
       </div>
      </div>
-
-     <Companies/>
+    <div className="mb-40">
+     <Companies />
+    </div>
   </>
       );
 }
