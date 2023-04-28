@@ -7,6 +7,7 @@ import Navbar from './components/navbar/navbar';
 import './App.css';
 import Footer from './components/footer/footer';
 import Template from './components/template/template';
+import Contact from './components/contact/contact';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/newsletters" element={<Newsletters />} />
         <Route path="/template" element={<Template />} />
+        <Route path="/contact" element={<Contact />} />
 
       </Routes>
       <Footer/>
