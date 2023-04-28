@@ -3,7 +3,6 @@ import blackrock from '../../assets/blackrock-logo.png'
 import charlesschwab from "../../assets/charlesschwab-logo.png"
 import goldman from "../../assets/goldman-logo.png"
 import kpmg from "../../assets/kpmg-logo.png"
-import hsbc from "../../assets/hsbc.png"
 
 
 

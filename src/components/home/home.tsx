@@ -1,6 +1,9 @@
 import { FC } from "react";
 import phone from '../../assets/phone.png'
 import Companies from "../companies/companies";
+import NewsletterGrid from "../newsletter-grid/newsletter-grid";
+import newsletters from "../../assets/newsletter-info";
+
 
 const Home:FC = () => {
 
@@ -20,6 +23,11 @@ const Home:FC = () => {
       </div>
       <div className="mb-40">
      <Companies />
+    </div>
+    <div className="Publications">
+      <div>
+        <NewsletterGrid  newsletters={newsletters} />
+      </div>
     </div>
     </>
       );
