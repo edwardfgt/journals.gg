@@ -26,6 +26,8 @@ const Home:FC = () => {
     </div>
     <div className="Publications">
       <div>
+        <h2 className="mb-10 text-center text-3xl">Our Brands</h2>
+
         <NewsletterGrid  newsletters={newsletters} />
       </div>
     </div>
