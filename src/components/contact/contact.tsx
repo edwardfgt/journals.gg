@@ -17,7 +17,7 @@ const Contact: FC = (): ReactElement => {
                 </div>
                 <div className="sm:col-span-2">
                     <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                    <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-white-900 textarea textarea-success" placeholder="Your message"></textarea>
+                    <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-white-900 textarea textarea-primary" placeholder="Your message"></textarea>
                 </div>
                 <button type="submit" className="btn btn-outline btn-primary">Send message</button>
             </form>

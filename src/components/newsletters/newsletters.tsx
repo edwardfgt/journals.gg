@@ -1,5 +1,37 @@
 import { FC } from "react";
 
+const NewsletterStats = [
+  {
+    name: 'Investing Journal',
+    description:
+      'Our flagship publication - Bitesize market-moving news, summaries and links from the world of investing, three times a week.',
+    subscribers: '27,000+',
+    openRate: '34.5%',
+    ctr: '2.1%',
+    sponsorships: 'Open',
+    href: 'https://www.investingjournal.gg/',
+  },
+  {
+    name: 'Crypto Journal',
+    description:
+      'Bitesize market-moving news, summaries and links from the world of Crypto and Web3, twice a week.',
+    subscribers: '3,400+',
+    openRate: '57.4%',
+    ctr: '1.6%',
+    sponsorships: 'Closed',
+    href: 'https://crypto.journals.gg/',
+  },
+  {
+    name: 'AI Journal',
+    description:
+      'Bitesize market-moving news, summaries and links from the world of AI and Machine Learning, every Friday.',
+    subscribers: '1,500+',
+    openRate: '40.6%',
+    ctr: '11.7%',
+    sponsorships: 'Closed',
+    href: 'https://ai.journals.gg/',
+  },
+]
 
 const Newsletters:FC = () => {
 
@@ -19,64 +51,30 @@ const Newsletters:FC = () => {
               </p>
             </div>
           </div>
-         
-    
-            <div className="container mx-auto">
-              <h2 className="text-2xl font-semibold mt-4">Investing Journal</h2>
-              <p>
-                Our flagship publication - Bitesize market-moving news, summaries and links
-                from the world of investing, three times a week.
-              </p>
-              <p>
-                <b>Subscribers:</b> 24,000+
-              </p>
-              <p>
-                <b>Open Rate:</b> 38%
-              </p>
-              <p>
-                <b>CTR:</b> 3.9%
-              </p>
-              <p>
-                <b>Sponsorships:</b> Currently open, please fill in our form.
-              </p>
-            </div>
-    
-            <div className="container mx-auto">
-              <h2 className="text-2xl font-semibold mt-4">Crypto Journal</h2>
-              <p>
-                Bitesize market-moving news, summaries and links from the world of Crypto and
-                Web3, twice a week.
-              </p>
-              <p>
-                <b>Subscribers:</b> 3200+
-              </p>
-              <p>
-                <b>Open Rate:</b> 57.4%
-              </p>
-              <p>CTR: 1.6%</p>
-              <p>
-                <b>Sponsorships:</b> Closed
-              </p>
-            </div>
-    
-            <div className="container mx-auto">
-              <h2 className="text-2xl font-semibold mt-4">AI Journal</h2>
-              <p>
-                Bitesize market-moving news, summaries and links from the world of AI and
-                Machine Learning, every Friday.
-              </p>
-              <p>
-                <b>Subscribers:</b> 1500+
-              </p>
-              <p>
-                <b>Open Rate:</b> 40.6%
-              </p>
-              <p>
-                <b>CTR:</b> 11.7%
-              </p>
-              <p>
-                <b>Sponsorships:</b> Closed
-              </p>
+
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                {NewsletterStats.map((newsletter) => (
+                  <div key={newsletter.name} className="flex flex-col">
+                    <dt className="text-base font-semibold leading-7 text-white">
+
+                      {newsletter.name}
+                    </dt>
+                    <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                      <p className="flex-auto">{newsletter.description}</p>
+                      <p className="flex-auto"><b>Subscribers: </b>{newsletter.subscribers}</p>
+                      <p className="flex-auto"><b>Open Rate: </b>{newsletter.openRate}</p>
+                      <p className="flex-auto"><b>CTR: </b>{newsletter.ctr}</p>
+                      <p className="flex-auto"><b>Sponsorships: </b>{newsletter.sponsorships}</p>
+                      <p className="mt-6">
+                        <a href={newsletter.href} className="text-sm font-semibold leading-6 text-indigo-400">
+                          Visit <span aria-hidden="true">→</span>
+                        </a>
+                      </p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
           </div>
