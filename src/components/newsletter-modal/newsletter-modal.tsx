@@ -52,21 +52,27 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
   
   }
 
-  return (
+return (
+  <div
+    className={`fixed inset-0 flex items-center justify-center z-50 ${
+      open ? "" : "hidden"
+    }`}
+  >
     <div
-      className={`fixed inset-0 flex items-center justify-center z-50 ${
-        open ? "" : "hidden"
-      }`}
-    >
-      <div
-        className="absolute inset-0 bg-gray-500 opacity-75"
-        onClick={onClose}
-      ></div>
-      <div className="relative bg-gray-800 rounded-lg p-4 w-full max-w-md mx-auto">
+      className="absolute inset-0 bg-gray-500 opacity-75"
+      onClick={onClose}
+    ></div>
+    <div className="relative bg-gray-800 rounded-lg p-4 w-3/4 max-w-full mx-auto flex">
+      <img
+        src="path/to/your/image.jpg"
+        alt="Your image description"
+        className="mr-4"
+      />
+      <div className="flex-1 my-10 mx-10">
         {newsletter && (
           <>
-            <h2 className="text-xl font-semibold mb-2">{newsletter.name}</h2>
-            <p className="mb-4">{newsletter.description}</p>
+            <h2 className="text-6xl font-semibold mb-6">{newsletter.name}</h2>
+            <p className="mb-8 text-xl">{newsletter.description}</p>
 
             <form onSubmit={(event) => handleSubmit(event)}>
               <div className="mb-4">
@@ -88,7 +94,9 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
         )}
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default NewsletterModal;
