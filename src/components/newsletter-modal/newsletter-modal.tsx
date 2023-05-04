@@ -4,6 +4,8 @@ interface Newsletter {
   name: string;
   description: string;
   pubID: string;
+  image: string;
+  href: string;
 }
 
 interface NewsletterModalProps {
@@ -52,51 +54,59 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
   
   }
 
-return (
-  <div
-    className={`fixed inset-0 flex items-center justify-center z-50 ${
-      open ? "" : "hidden"
-    }`}
-  >
+  return (
     <div
-      className="absolute inset-0 bg-gray-500 opacity-75"
-      onClick={onClose}
-    ></div>
-    <div className="relative bg-gray-800 rounded-lg p-4 w-3/4 max-w-full mx-auto flex">
-      <img
-        src="path/to/your/image.jpg"
-        alt="Your image description"
-        className="mr-4"
-      />
-      <div className="flex-1 my-10 mx-10">
-        {newsletter && (
-          <>
-            <h2 className="text-6xl font-semibold mb-6">{newsletter.name}</h2>
-            <p className="mb-8 text-xl">{newsletter.description}</p>
-
-            <form onSubmit={(event) => handleSubmit(event)}>
-              <div className="mb-4">
-                <input
-                  type="email"
-                  onChange={handleEmailChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  placeholder="Email"
-                />
+      className={`fixed inset-0 flex items-center justify-center z-50 ${
+        open ? "" : "hidden"
+      }`}
+    >
+      <div
+        className="absolute inset-0 bg-gray-500 opacity-75"
+        onClick={onClose}
+      ></div>
+      <div className="relative bg-gray-800 rounded-lg p-4 w-3/4 max-w-full mx-auto">
+        <div className="flex items-start my-10 mx-10">
+          {newsletter && (
+            <>
+              <div className="w-2/5 mr-4">
+              <img
+                src={newsletter.image}
+                alt="Your image description"
+                className="w-full object-cover rounded"
+              />
               </div>
-              <button
-                type="submit"
-                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-              >
-                Submit
-              </button>
-            </form>
-          </>
-        )}
+              <div className="mx-20">
+                <h2 className="text-6xl font-semibold mb-6">{newsletter.name}</h2>
+                <p className="mb-8 text-xl">{newsletter.description}</p>
+  
+                <form onSubmit={(event) => handleSubmit(event)}>
+                  <div className="mb-4">
+                    <input
+                      type="email"
+                      onChange={handleEmailChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                  >
+                    Submit
+                  </button>
+                </form>
+                <div className="mt-10">
+                  <a href={newsletter.href} className="text-m font-semibold leading-6 text-indigo-400">
+                    Visit Website <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
 };
 
 export default NewsletterModal;

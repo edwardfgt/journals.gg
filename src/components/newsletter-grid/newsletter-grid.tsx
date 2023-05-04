@@ -6,6 +6,7 @@ interface Newsletter {
     name: string;
     description: string;
     image: string;
+    href: string;
 }
 
 type Newsletters = Array<Newsletter>
