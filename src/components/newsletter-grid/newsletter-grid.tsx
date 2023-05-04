@@ -40,7 +40,7 @@ const NewsletterGrid: FC<HomepageGridProps> = ({ newsletters }) => {
         <div className="flex justify-center mb-40">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-6">
               {newsletters.map((newsletter, index) => (
-                <div className="card w-96 bg-base-100 shadow-xl image-full" 
+                <div className="card w-96 bg-base-100 shadow-xl image-full hover:border" 
                 key={index}
                 onClick={() => handleOpen(newsletter)}>
                 <figure><img src={newsletter.image} alt={newsletter.name} /></figure>
