@@ -15,14 +15,17 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/newsletters" element={<Newsletters />} />
-        <Route path="/template" element={<Template />} />
-        <Route path="/contact" element={<Contact />} />
-
-      </Routes>
-      <Footer/>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/newsletters" element={<Newsletters />} />
+            <Route path="/template" element={<Template />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
