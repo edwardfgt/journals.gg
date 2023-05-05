@@ -14,7 +14,6 @@ const Home:FC = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col justify-center items-center">
             <h1 className="mb-4 text-6xl text-center text-white">Journals.gg</h1>
-            {/* text-center text-lg font-semibold leading-8 text-white */}
             <h2 className="mb-10 text-center text-white">We publish a selection of newsletters covering the world of emerging investments. We keep tens of thousands of engaged investors ahead of the curve - from stocks, to crypto and beyond. No BS, no fluff and no spam - We help our readers become a better investor in 5 minutes per day.</h2>
           </div>
           <div>
