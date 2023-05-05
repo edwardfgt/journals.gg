@@ -5,6 +5,7 @@ const Contact: FC = (): ReactElement => {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
+    const [success, setSuccess] = useState(false);
 
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,8 +37,13 @@ const Contact: FC = (): ReactElement => {
         };
         
         const response = await fetch(url, options)
-        const data = await response.json();
-        console.log(data);
+        const data = await response.text();
+        if (data == "successful") {
+            setSuccess(true);
+            console.log(success);
+        } else {
+            console.error("Error submitting the form:", response.statusText);
+        }
     
     }
     return (
@@ -59,6 +65,14 @@ const Contact: FC = (): ReactElement => {
                         <textarea id="message" rows="6" onChange={handleMessageChange} className="block p-2.5 w-full text-sm text-white-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Your message"></textarea>
                     </div>
                     <button type="submit" className="btn btn-outline">Send message</button>
+
+                    {success &&
+                    <div className="alert alert-success shadow-lg">
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <span>Your form has been submitted!</span>
+                    </div>
+                  </div> }
                 </form>
             </div>
             </section>
