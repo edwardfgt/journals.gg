@@ -1,18 +1,24 @@
 import { Disclosure } from '@headlessui/react'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Newsletters', href: '/newsletters', current: true },
-  { name: 'Sponsor', href: 'https://vtr4yvd7hvn.typeform.com/to/YZFk9ref?typeform-source=journals.gg', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const navigation = [
+    { name: 'Newsletters', href: '/newsletters', current: currentPath === '/newsletters' },
+    { name: 'Sponsor', href: 'https://vtr4yvd7hvn.typeform.com/to/YZFk9ref?typeform-source=journals.gg', current: currentPath === '/sponsor' },
+    { name: 'Contact', href: '/contact', current: currentPath === '/contact' },
+  ];
+
   return (
     <Disclosure as="nav" className="bg-gray-800 w-full">
       {({ open }) => (
