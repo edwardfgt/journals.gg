@@ -3,6 +3,8 @@ import blackrock from '../../assets/blackrock-logo.png'
 import charlesschwab from "../../assets/charlesschwab-logo.png"
 import goldman from "../../assets/goldman-logo.png"
 import kpmg from "../../assets/kpmg-logo.png"
+import citi from "../../assets/citi-logo.png"
+
 
 
 
@@ -44,7 +46,7 @@ const Companies:FC = () => {
               />
               <img
                 className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
+                src={citi}
                 alt="Statamic"
                 width={158}
                 height={48}
