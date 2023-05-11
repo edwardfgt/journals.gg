@@ -10,7 +10,6 @@ import Template from './components/template/template';
 import Contact from './components/contact/contact';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <Router>
