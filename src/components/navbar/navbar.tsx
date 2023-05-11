@@ -1,6 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Link, useLocation } from "react-router-dom"
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import favicon from "../../assets/favicon.ico"
 
 
 
@@ -41,7 +42,7 @@ export default function Navbar() {
                   <Link to="/">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={favicon}
                     alt="Journals.gg"
                   />
                   </Link>
@@ -49,7 +50,7 @@ export default function Navbar() {
 
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={favicon}
                     alt="Journals.gg"
                   />
                  </Link>
