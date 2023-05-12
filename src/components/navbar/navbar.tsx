@@ -1,18 +1,17 @@
 import { Disclosure } from '@headlessui/react'
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import favicon from "../../assets/favicon.ico"
 
-
+type NavbarProps = {
+  currentPath: string;
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
-
-  const location = useLocation();
-  const currentPath = location.pathname;
+export default function Navbar({ currentPath }: NavbarProps) {
 
   const navigation = [
     { name: 'Newsletters', href: '/newsletters', current: currentPath === '/newsletters' },
