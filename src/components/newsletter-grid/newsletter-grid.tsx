@@ -3,20 +3,17 @@ import NewsletterModal from "../newsletter-modal/newsletter-modal";
 
 
 interface Newsletter {
-    name: string;
-    description: string;
-    image: string;
-    href: string;
+  name: string;
+  description: string;
+  image: string;
+  href: string;
+  pubID: string;
 }
 
 type Newsletters = Array<Newsletter>
 
 interface HomepageGridProps {
     newsletters: Newsletters;
-}
-
-interface CurrentModal {
-    newsletter: Newsletter;
 }
 
 

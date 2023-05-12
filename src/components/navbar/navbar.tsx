@@ -7,7 +7,7 @@ type NavbarProps = {
   currentPath: string;
 };
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 

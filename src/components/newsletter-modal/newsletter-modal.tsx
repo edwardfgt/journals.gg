@@ -30,28 +30,30 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     console.log("form submitted")
-    const apiKey = import.meta.env.VITE_BEEHIIV_API_KEY;
-    const url = `https://stoplight.io/mocks/beehiiv/v2/104190750/publications/${newsletter.pubID}/subscriptions`;
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        email: email,
-        reactivate_existing: false,
-        send_welcome_email: true,
-        utm_source: "Journals.gg",
-        referring_site: "https://journals.gg",
-      }),
-    };
-    
-    const response = await fetch(url, options)
-    const data = await response.json();
-    console.log(data);
-  
+
+    if (newsletter) {
+      const apiKey = import.meta.env.VITE_BEEHIIV_API_KEY;
+      const url = `https://stoplight.io/mocks/beehiiv/v2/104190750/publications/${newsletter.pubID}/subscriptions`;
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          email: email,
+          reactivate_existing: false,
+          send_welcome_email: true,
+          utm_source: "Journals.gg",
+          referring_site: "https://journals.gg",
+        }),
+      };
+
+      const response = await fetch(url, options)
+      const data = await response.json();
+      console.log(data);
+    }
   }
 
   return (
