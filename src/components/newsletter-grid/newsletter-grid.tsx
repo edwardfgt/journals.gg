@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import NewsletterModal from "../newsletter-modal/newsletter-modal";
 
-
 interface Newsletter {
   name: string;
   description: string;
@@ -15,7 +14,6 @@ type Newsletters = Array<Newsletter>
 interface HomepageGridProps {
     newsletters: Newsletters;
 }
-
 
 const NewsletterGrid: FC<HomepageGridProps> = ({ newsletters }) => {
     const [open, setOpen] = useState(false);
@@ -33,7 +31,6 @@ const NewsletterGrid: FC<HomepageGridProps> = ({ newsletters }) => {
 
     return (
         <>
-
         <div className="flex justify-center mb-40">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-6">
               {newsletters.map((newsletter, index) => (
@@ -53,5 +50,4 @@ const NewsletterGrid: FC<HomepageGridProps> = ({ newsletters }) => {
       );
     };
     
-
 export default NewsletterGrid;

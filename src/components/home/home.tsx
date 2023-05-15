@@ -4,9 +4,7 @@ import Companies from "../companies/companies";
 import NewsletterGrid from "../newsletter-grid/newsletter-grid";
 import newsletters from "../../assets/newsletter-info";
 
-
 const Home:FC = () => {
-
 
     return (
     <>

@@ -5,9 +5,6 @@ import goldman from "../../assets/goldman-logo.png"
 import kpmg from "../../assets/kpmg-logo.png"
 import citi from "../../assets/citi-logo.png"
 
-
-
-
 const Companies:FC = () => {
     return (
     <>
