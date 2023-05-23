@@ -51,7 +51,7 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
         }),
       };
 
-      // const response = await fetch(url, options)
+      const response = await fetch(url, options)
       // const data = await response.json();
       // console.log(data);
     }
