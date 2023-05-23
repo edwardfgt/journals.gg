@@ -36,6 +36,7 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
       const url = `https://api.beehiiv.com/v2/publications/${newsletter.pubID}/subscriptions`;
       const options = {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -50,9 +51,9 @@ const NewsletterModal: FC<NewsletterModalProps> = ({
         }),
       };
 
-      const response = await fetch(url, options)
-      const data = await response.json();
-      console.log(data);
+      // const response = await fetch(url, options)
+      // const data = await response.json();
+      // console.log(data);
     }
   }
 
