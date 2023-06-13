@@ -1,0 +1,9 @@
+{
+  "function": {
+    "emailAPIFunc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
